@@ -33,16 +33,7 @@ def start(yamlConfig):
         for image in images:
             if image not in completedImages:
                 type = getType(image)
-                print "********** the type ******"
-                print type
-                print "*************"
-                
-                
-                print "not in there"
-                for pipe in pipelines:
-                    print pipe
-                    pipelines[pipe].run()
-                    print pipelines[pipe].getMods()
+                pipeline[type].run()                
                 completedImages.append(image)
                 
                 print "IMAGE COMPETED: " + image

@@ -15,9 +15,9 @@ import threading
 from generateImages import generateImages
 
 class simThread(threading.Thread):
-    def run(self):
+    def run(self, numberOfImages):
         try:
-            generateImages()
+            generateImages(numberOfImages)
         except KeyboardInterrupt:
             raise
 
@@ -31,9 +31,14 @@ def start(yamlConfig):
     #Generate the specified pipelines
     pipelines = buildPipelines(pipes, pipeConfig)
 
+    #Will use this to know when experiment has finished
+    numberOfImages = 100
+
     """START A SIMULATION """
     t = simThread()
-    t.run()
+    t.run(numberOfImages)
+    
+    
     
     print "********* pipes build - NOW RUNNING ************"
     for pipe in pipes:

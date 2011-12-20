@@ -6,6 +6,11 @@ class Pipeline():
         self.sequenceList = []
         self.total = 0
         
+        #NEED TO PASS PARMS from the engine
+        self.file = ""
+        
+        
+        
         for mod in modules:
             self.sequenceList.append(mod)
         #print "** PASSED MODS **"
@@ -21,10 +26,11 @@ class Pipeline():
             x = mod()
             self.instanceDict[class_] = x
     
-    def run(self):
+    def run(self, file):
         self.total += 1
+        self.file = file
         for clazz in self.sequenceList:
-            self.data = self.instanceDict[clazz].run()
+            self.data = self.instanceDict[clazz].run(self.file, self.data)
             
     def getMods(self):
         return self.sequenceList
@@ -34,3 +40,4 @@ class Pipeline():
     
     def finalise(self):
         print self.total
+        print self.data

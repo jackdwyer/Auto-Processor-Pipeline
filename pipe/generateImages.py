@@ -7,7 +7,7 @@ def generateImages():
     random.seed()
     types = ['fire', 'dirt', 'water']
         
-    for i in range(100):
+    for i in range(10):
         x = random.randint(0, len(types))
         filename = "IMG_"+str(i+1)+"_"+str(types[x-1])+".img"
         print filename

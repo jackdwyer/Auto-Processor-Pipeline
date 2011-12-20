@@ -25,7 +25,7 @@ def start(yamlConfig):
     print "START SIMULATION WITH > python generateImages.py gen"
     
     #Will use this to know when experiment has finished
-    numberOfImages = 100
+    numberOfImages = 10
     
     completedImages = []
     while (len(completedImages) < numberOfImages):        
@@ -36,16 +36,16 @@ def start(yamlConfig):
                 type = getType(image)
                 
                 pipelines[type].getMods()
-                pipelines[type].run()                
+                pipelines[type].run(file = image)                
                 completedImages.append(image)
                 print "IMAGE COMPETED: " + image
             else:
                 """do nothing """
     
     #experiment finished!
-    for pipe in pipelines:
-        print "TOTAL FRAMES FOR " + pipe + " pipeline :"
-        pipelines[pipe].finalise()
+    for type in pipelines:
+        print "TOTAL FRAMES FOR " + type + " pipeline :"
+        pipelines[type].finalise()
                 
                 
                 

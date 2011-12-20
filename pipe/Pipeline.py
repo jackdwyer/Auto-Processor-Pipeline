@@ -7,8 +7,8 @@ class Pipeline():
         
         for mod in modules:
             self.sequenceList.append(mod)
-        print "** PASSED MODS **"
-        print self.sequenceList
+        #print "** PASSED MODS **"
+        #print self.sequenceList
     
     def create(self):       
         self.instanceModules()

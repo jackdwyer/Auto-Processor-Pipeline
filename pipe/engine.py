@@ -69,7 +69,7 @@ def buildPipelines(pipes, config):
     """
     pipesDict = {}
     for pipe in pipes:
-        print pipe
+        #print pipe
         try :
             parms = pipeConfig[pipe]
         except :

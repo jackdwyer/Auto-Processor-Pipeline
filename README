@@ -1,0 +1,5 @@
+SAX Auto Processor
+Jack Dwyer
+20/12/2011
+
+Dynamically loads python modules, then spawns seperate pipelines

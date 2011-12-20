@@ -34,10 +34,6 @@ def start(yamlConfig):
         for image in images:
             if image not in completedImages:
                 type = getType(image)
-                print type
-                print "************************"
-                print pipelines[type].getMods()
-                print "************************"
                 
                 pipelines[type].getMods()
                 pipelines[type].run()                
@@ -45,8 +41,11 @@ def start(yamlConfig):
                 print "IMAGE COMPETED: " + image
             else:
                 """do nothing """
-                
-                
+    
+    #experiment finished!
+    for pipe in pipelines:
+        print "TOTAL FRAMES FOR " + pipe + " pipeline :"
+        pipelines[pipe].finalise()
                 
                 
                 

@@ -3,11 +3,11 @@ import glob
 import sys, os
 import time
 
-def generateImages(numberOfImages, imageTypes):
+def generateImages():
     random.seed()
-    types = imageTypes
-    
-    for i in range(numberOfImages):
+    types = ['fire', 'dirt', 'water']
+        
+    for i in range(100):
         x = random.randint(0, len(types))
         filename = "IMG_"+str(i+1)+"_"+str(types[x-1])+".img"
         print filename

@@ -44,6 +44,10 @@ def run(instanceDict, dataFile, data, moduleConfig, sequenceList):
         data = instanceDict[class_].run(dataFile, data, **parms)
 
 if __name__ == "__main__":    
+    if (len(sys.argv) == 1):
+        print "Not Enough Arguments: python loader.py load|create [options]"
+        sys.exit(1)
+            
     if 'create' in sys.argv:
         create()
     if 'load' in sys.argv:

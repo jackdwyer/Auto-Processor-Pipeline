@@ -1,0 +1,8 @@
+pipes : 
+ - buffer
+ - sounds
+ - test
+pipeConfig :
+ buffer: { printX, printY }
+ sounds: { printY, printX }
+ test: { printZ }

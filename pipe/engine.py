@@ -18,6 +18,7 @@ def start(yamlConfig):
     config = yaml.load(stream)
     pipes = config.get('imageTypes')
     pipeConfig = config.get('pipeConfig')
+    print pipeConfig
     #Generate the specified pipelines
     pipelines = buildPipelines(pipes, pipeConfig)
     print "********** pipe lines created ***********"

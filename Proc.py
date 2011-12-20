@@ -5,8 +5,7 @@ Base process class, all functions for the framework will be derived from
 
 class Proc():
     def process(self, file, data):
-        print "EXCEPTION - You have failed the extension"
-        return data
+        raise Exception("You must overide this method!")
     
     def run(self, file, data, **args):
         data = self.process(file, data, **args) 

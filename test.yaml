@@ -1,0 +1,8 @@
+file : lysozyme_1_008.img
+modules : 
+ - GetHeaders
+ - testAdditionalParms
+ - PrintHeaders
+ - testAdditionalParms
+moduleConfig : 
+ testAdditionalParms: { value1: 5.6, value2: 13, value3: 87303535 }

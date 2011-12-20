@@ -33,7 +33,7 @@ def start(yamlConfig):
         for image in images:
             if image not in completedImages:
                 type = getType(image)
-                pipeline[type].run()                
+                pipelines[type].run()                
                 completedImages.append(image)
                 
                 print "IMAGE COMPETED: " + image

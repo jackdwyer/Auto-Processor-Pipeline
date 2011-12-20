@@ -8,18 +8,8 @@ Grabs images and passes them to correct pipeline
 
 import yaml
 import os, sys
+import glob
 from Pipeline import Pipeline
-
-#for simple sim
-import threading
-from generateImages import generateImages
-
-class simThread(threading.Thread):
-    def run(self, numberOfImages):
-        try:
-            generateImages(numberOfImages)
-        except KeyboardInterrupt:
-            raise
 
 
 #Get all Experiment Parameters, and configs
@@ -30,15 +20,18 @@ def start(yamlConfig):
     pipeConfig = config.get('pipeConfig')
     #Generate the specified pipelines
     pipelines = buildPipelines(pipes, pipeConfig)
-
+    
     #Will use this to know when experiment has finished
     numberOfImages = 100
-
-    """START A SIMULATION """
-    t = simThread()
-    t.run(numberOfImages)
     
     
+    """Start looking for image, and pushing them off to the pipelines 
+    totalImages = 1
+    while (totalImages < numberOfImages):
+        images = glob.glob('*.img')
+        print "jack"
+    """
+        
     
     print "********* pipes build - NOW RUNNING ************"
     for pipe in pipes:

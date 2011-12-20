@@ -3,6 +3,6 @@ imageTypes :
  - dirt
  - water
 pipeConfig :
- buffer: { printX, printY }
- sounds: { printY, printX }
- test: { printZ }
+ fire: { fire }
+ dirt: { dirt }
+ water: { water }

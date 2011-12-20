@@ -13,7 +13,6 @@ class Pipeline():
     def create(self):       
         self.instanceModules()
 
-
     def instanceModules(self):
         for class_ in self.sequenceList:
             module = __import__(class_)

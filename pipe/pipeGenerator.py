@@ -18,6 +18,7 @@ def build(config):
     pipesList = []
     
     for pipe in pipes:
+    
         try :
             parms = pipeConfig[pipe]
         except :

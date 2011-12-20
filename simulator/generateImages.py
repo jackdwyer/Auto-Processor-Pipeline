@@ -1,6 +1,7 @@
 import random
 import glob
 import sys, os
+import time
 
 def generateImages():
     random.seed()
@@ -14,6 +15,7 @@ def generateImages():
         f = open(filename, "w")
         f.write(str(randValue))
         f.close()
+        time.sleep(1)
         
         
 def deleteIMGS():

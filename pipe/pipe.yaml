@@ -3,6 +3,6 @@ imageTypes :
  - dirt
  - water
 pipeConfig :
- fire: fire
- dirt: dirt
- water: water
+ fire: { fire }
+ dirt: { dirt }
+ water: { water }

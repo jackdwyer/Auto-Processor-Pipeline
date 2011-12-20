@@ -64,11 +64,13 @@ def buildPipelines(pipes, config):
     """
     pipesDict = {}
     for pipe in pipes:
-        #print pipe
+        print config
         try :
-            parms = pipeConfig[pipe]
+            parms = config[pipe]
         except :
             parms = {}  
+        
+        print parms
         x = Pipeline(*parms)      
         x.create()
         pipesDict[pipe] = x

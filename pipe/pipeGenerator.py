@@ -33,7 +33,7 @@ def build(config):
 def create(config):
     pipes = build(config)
     print pipes
-    print "********* pipes build - NOW RUNNING ************"
+    print "********* pipes built - NOW RUNNING ************"
     for pipe in pipes:
         print pipe
         pipe.run()

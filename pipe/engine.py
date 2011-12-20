@@ -20,26 +20,47 @@ def start(yamlConfig):
     pipeConfig = config.get('pipeConfig')
     #Generate the specified pipelines
     pipelines = buildPipelines(pipes, pipeConfig)
+    print "********** pipe lines created ***********"
+    print "START SIMULATION WITH > python generateImages.py gen"
     
     #Will use this to know when experiment has finished
     numberOfImages = 100
     
-    
-    """Start looking for image, and pushing them off to the pipelines 
-    totalImages = 1
-    while (totalImages < numberOfImages):
+    completedImages = []
+    while (len(completedImages) < numberOfImages):        
+        #need to check images in location
         images = glob.glob('*.img')
-        print "jack"
-    """
-        
-    
-    print "********* pipes build - NOW RUNNING ************"
-    for pipe in pipes:
-        print pipe
-        pipe.run()
-        print pipe.getMods()
-    
-
+        for image in images:
+            if image not in completedImages:
+                type = getType(image)
+                print "********** the type ******"
+                print type
+                print "*************"
+                
+                
+                print "not in there"
+                for pipe in pipelines:
+                    print pipe
+                    pipelines[pipe].run()
+                    print pipelines[pipe].getMods()
+                completedImages.append(image)
+                
+                print "IMAGE COMPETED: " + image
+            else:
+                """do nothing """
+                
+                
+                
+                
+                
+                
+def getType(fileName):
+    #only a quick method to get image type
+    print "************* filenma"
+    print fileName
+    values = fileName.split(".")
+    values = values[0].split("_")
+    return values[2]
 
 
 def buildPipelines(pipes, config):
@@ -60,7 +81,7 @@ def buildPipelines(pipes, config):
 
 
 if __name__ == "__main__":   
-    if 'build' in sys.argv: 
+    if 'start' in sys.argv: 
         start(sys.argv[2])
 
 

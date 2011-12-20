@@ -16,13 +16,14 @@ def build(config):
     pipes = config.get('pipes')
     pipeConfig = config.get('pipeConfig')
     pipesList = []
+    
     for pipe in pipes:
-        x = Pipeline()
         try :
             parms = pipeConfig[pipe]
         except :
-            parms = {}        
-        x.create(*parms)
+            parms = {}  
+        x = Pipeline(*parms)      
+        x.create()
         pipesList.append(x)
     
     print pipesList
@@ -35,6 +36,7 @@ def create(config):
     for pipe in pipes:
         print pipe
         pipe.run()
+        print pipe.getMods()
 
 if __name__ == "__main__":    
     if 'build' in sys.argv:

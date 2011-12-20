@@ -33,9 +33,14 @@ def start(yamlConfig):
         for image in images:
             if image not in completedImages:
                 type = getType(image)
+                print type
+                print "************************"
+                print pipelines[type].getMods()
+                print "************************"
+                
+                pipelines[type].getMods()
                 pipelines[type].run()                
                 completedImages.append(image)
-                
                 print "IMAGE COMPETED: " + image
             else:
                 """do nothing """
@@ -47,8 +52,6 @@ def start(yamlConfig):
                 
 def getType(fileName):
     #only a quick method to get image type
-    print "************* filenma"
-    print fileName
     values = fileName.split(".")
     values = values[0].split("_")
     return values[2]

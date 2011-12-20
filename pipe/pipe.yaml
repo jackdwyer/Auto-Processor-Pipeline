@@ -1,7 +1,7 @@
-pipes : 
- - buffer
- - sounds
- - test
+imageTypes : 
+ - fire
+ - dirt
+ - water
 pipeConfig :
  buffer: { printX, printY }
  sounds: { printY, printX }

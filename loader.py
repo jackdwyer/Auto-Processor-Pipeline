@@ -4,7 +4,6 @@ Uses:
 http://pyyaml.org/wiki/PyYAMLDocumentation
 easy_install pyYaml
 
-Some framework/autoloaderme that the big wigs may use at the Monash Sync.
 """
 import yaml
 import os, sys

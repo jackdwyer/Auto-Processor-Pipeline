@@ -10,6 +10,18 @@ import yaml
 import os, sys
 from Pipeline import Pipeline
 
+#for simple sim
+import threading
+from generateImages import generateImages
+
+class simThread(threading.Thread):
+    def run(self):
+        try:
+            generateImages()
+        except KeyboardInterrupt:
+            raise
+
+
 #Get all Experiment Parameters, and configs
 def start(yamlConfig):
     stream = file(yamlConfig, 'r')
@@ -20,6 +32,14 @@ def start(yamlConfig):
     pipelines = buildPipelines(pipes, pipeConfig)
 
     """START A SIMULATION """
+    t = simThread()
+    t.run()
+    
+    print "********* pipes build - NOW RUNNING ************"
+    for pipe in pipes:
+        print pipe
+        pipe.run()
+        print pipe.getMods()
     
 
 

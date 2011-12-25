@@ -3,3 +3,7 @@ Jack Dwyer
 20/12/2011
 
 Dynamically loads python modules, then spawns seperate pipelines
+
+-------
+Porject is a bit of a mess currently, will look over in the coming days.
+Current working version is in the folder pipes.
